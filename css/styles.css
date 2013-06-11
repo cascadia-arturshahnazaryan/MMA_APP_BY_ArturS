@@ -1,0 +1,57 @@
+
+@charset "utf-8";
+/* CSS Document */
+
+/*home*/
+#home{
+	background:url(../images/fence.png);
+}
+#home_header{
+	background-image:url(../images/logo_mma_main_small_50x50.png);
+	background-repeat:no-repeat;
+}
+#home_header h1{
+	font-family:"Comic Sans MS", cursive;
+}
+#banner{
+	width:100%;
+}
+/*end of home*/
+
+/*rankings*/
+#rankings{
+	background:url(../images/fence.png);
+}
+/*end of rankings*/
+
+/*champions*/
+#champions{
+	background:url(../images/fence.png);
+}
+#champions a{
+	text-decoration:none;
+	margin:0px;
+	padding:0px;
+}
+#champions p{
+	margin:0px;
+	padding:0px;
+}
+/*end of champions*/
+
+/*hall of fame*/
+#hall_of_fame{
+	background:url(../images/fence.png);
+}
+#hall_of_fame p{
+	font-family:Verdana, Geneva, sans-serif;
+	background-color:white;
+	border:1px solid black;
+}
+/*end hall of fame*/
+
+/*upcoming events*/
+#upcoming_Events{
+	background-color:#CCFF99;
+}
+/*end of upcoming events*/

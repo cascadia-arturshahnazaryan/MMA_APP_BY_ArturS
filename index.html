@@ -1,243 +1,364 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE HTML>
+<html>
 <head>
-	<meta charset="utf-8" />
-	<title>MMA Mobile App</title>
+<meta charset="utf-8">
+<title>MMA(Mixed Martial Arts) App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+<link rel="stylesheet" href="themes/trying_firstthemeroller.min.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile.structure-1.3.1.min.css" />
+<link rel="stylesheet" href="css/styles.css" />
+<script type="text/javascript" src="JavaScript/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="JavaScript/jquery.mobile-1.3.0.min.js"></script>
+<script type="text/javascript" src="JavaScript/mma_app_main.js"></script>
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-
-	<link rel="stylesheet" href="_/css/jquery.mobile.css" />
-	<script src="_/js/jquery.js"></script>
-	<script src="_/js/jquery.mobile.js"></script>
-
-	<script src="_/js/myscript.js"></script>
-	<link rel="stylesheet" href="_/css/mystyles.css" />
 </head>
+
 <body>
-	<!-- Page: home -->
-	<div id="home"
-		data-role="page"
-		data-title="View Source: Home">
+	<!--homepage-->
+    <div id="home" data-role="page">
+    	<div id="home_header" data-role="header"><!--start of header-->
+            <h1>MMA Home</h1>
+            <h2>Mixed Martial Arts</h2>
+        </div><!--end of header-->
+        <img id="banner" src="images/banner1.png">
+        <div data-role="footer" data-position="fixed">
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a href="#rankings" data-role="button" data-icon="grid">Rankings</a></li>
+                    <li><a href="#champions" data-role="button" data-icon="star">Champions</a></li>
+                    <li><a href="#hall_of_fame" data-role="button" data-icon="check">Hall Of Fame</a></li>
+                    <li><a href="#upcoming_Events" data-role="button" data-icon="bars">Upcoming Events</a></li>
+                </ul>
+            </div>
+        </div>
 
-		<div data-role="header"
-			data-position="fixed">
-			<h1>MMA</h1>
-		</div><!-- header -->
-		<div data-role="content">
-			Welcome MMA App
-		</div>
-		<div data-role="controlgroup">
-			<a href="#blog" 
-				data-role="button"
-				data-icon="arrow-r"
-			>Odds</a>
-			<a href="#videos" 
-				data-role="button"
-				data-icon="arrow-r"
-			>Rankings</a>
-			<a href="#photos" 
-				data-role="button"
-				data-icon="arrow-r"
-			>Head to Head Comparison</a>
-			<a href="#tweets" 
-				data-role="button"
-				data-icon="arrow-r"
-			>Champions</a>
-		</div><!-- links -->
-	</div><!-- page -->
+    </div>
+    <!--end of home page-->
 
-	<!-- Page: blog -->
-	<div id="blog"
-		data-role="page"
-		data-title="View Source: Blog">
-		<div data-role="header"
-			data-position="fixed"
-			data-id="vs_header">
-			<h1>Blog</h1>
-			<a href="#home" data-icon="home" data-iconpos="notext">Home</a>
-		</div><!-- header -->
-		<div data-role="content">
-			<div data-role="collapsible-set">
-				<div data-role="collapsible">
-					<h3>A JSON Tutorial. Getting started with JSON</h3>
-					<p>Getting started with JavaScript Object Notation. A JSON tutorial for Absolute Beginners</p>
-				</div><!-- collapsible -->
-				
-				<div data-role="collapsible"
-					data-collapsed="false">
-					<h3>WordPress Newbie Tip…control length of posts on homepage</h3>
-					<p>If your WordPress site is set up to show the full length articles</p>
-				</div><!-- collapsible -->
-				
-				<div data-role="collapsible">
-					<h3>Tips for finding a great domain name</h3>
-					<p>Workflow tips and tricks for Adobe In-Design</p>
-				</div><!-- collapsible -->
-				
-				<div data-role="collapsible">
-					<h3>Advantages of Creating Subdomain Shortcuts</h3>
-					<p>Creating sub-domains gives you the ability to create shortcuts</p>
-				</div><!-- collapsible -->
-				
-				<div data-role="collapsible">
-					<h3>Creating a Photo Rotator with JQuery Cycle</h3>
-					<p>I love the JQuery tagline…write less, do more. </p>
-				</div><!-- collapsible -->
-			</div><!-- accordion -->
-		</div><!-- content -->
-		<div data-role="footer"
-			data-position="fixed"
-			data-id="vs_footer">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#home" 
-					data-role="button"
-					data-icon="home"
-					>Home</a></li>
-					<li><a href="#" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Blog</a></li>
-					<li><a href="#videos" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Videos</a></li>
-					<li><a href="#photos" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Photos</a></li>
-					<li><a href="#tweets" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Tweets</a></li>
-				</ul>
-			</div><!-- navbar -->
-		</div><!-- footer -->
-	</div><!-- page -->
+	<!--rankings-->
+    <div id="rankings" data-role="page">
+    	<div data-role="header" data-id="rank_header">
+        	<h1>Rankings</h1>
+            <a href="#home" data-icon="home">Home</a><!--adds a "home" icon in the header -->
+        </div>
+        <div data-role="collapsible" data-collapsed="false">
+        	<h3>Pound For Pound</h3>
+            	<ul data-role="listview">
+                	<li><img src="images/1.png"><h2>1</h2><p>Anderson Silva</p><img src="images/bra.gif"></li>
+                    <li><img src="images/2.png"><h2>2</h2><p>Jon Jones</p><img src="images/usa.gif"></li>
+                    <li><img src="images/3.png"><h2>3</h2><p>Georges St-Pierre</p><img src="images/can.gif"></li>
+                    <li><img src="images/4.png"><h2>4</h2><p>Jose Aldo</p><img src="images/bra.gif"></li>
+                    <li><img src="images/5.png"><h2>5</h2><p>Benson Henderson</p><img src="images/usa.gif"></li>
+                    <li><img src="images/6.png"><h2>6</h2><p>Demetrious Johnson</p><img src="images/usa.gif"></li>
+                    <li><img src="images/7.png"><h2>7</h2><p>Cain Velasquez</p><img src="images/usa.gif"></li>
+                    <li><img src="images/8.png"><h2>8</h2><p>Renan Barao</p><img src="images/bra.gif"></li>
+                    <li><img src="images/9.png"><h2>9</h2><p>Gilbert Melendez</p><img src="images/usa.gif"></li>
+                    <li><img src="images/10.png"><h2>10</h2><p>Frankie Edgar</p><img src="images/usa.gif"></li>
+                </ul>
+            
+        </div>
+        <div data-role="collapsible">
+        	<h3>Heavyweight</h3>
+            	<ul data-role="listview">
+                	<li><img src="images/7.png"><h2>1</h2><p>Cain Velasquez</p><img src="images/usa.gif"></li>
+                    <li><img src="images/jds.png"><h2>2</h2><p>Junior Dos Santos</p><img src="images/bra.gif"></li>
+                    <li><img src="images/dc.png"><h2>3</h2><p>Daniel Cormier</p><img src="images/usa.gif"></li>
+                    <li><img src="images/werdum.png"><h2>4</h2><p>Fabricio Werdum</p><img src="images/bra.gif"></li>
+                    <li><img src="images/ao.png"><h2>5</h2><p>Alistair Overeem</p><img src="images/ned.gif"></li>
+                    <li><img src="images/jb.png"><h2>6</h2><p>Josh Barnett</p><img src="images/usa.gif"></li>
+                    <li><img src="images/rn.png"><h2>7</h2><p>Roy Nelson</p><img src="images/usa.gif"></li>
+                    <li><img src="images/as.png"><h2>8</h2><p>Antonio Silva</p><img src="images/bra.gif"></li>
+                    <li><img src="images/fm.png"><h2>9</h2><p>Frank Mir</p><img src="images/usa.gif"></li>
+                    <li><img src="images/mh.png"><h2>10</h2><p>Mark Hunt</p><img src="images/nzl.gif"></li>
+                </ul>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Light-heavyweight</h3>
+            	<ul data-role="listview">
+                	<li><img src="images/2.png"><h2>1</h2><p>Jon Jones</p><img src="images/usa.gif"></li>
+                    <li><img src="images/lm.png"><h2>2</h2><p>Lyoto Machida</p><img src="images/bra.gif"></li>
+                    <li><img src="images/ag.png"><h2>3</h2><p>Alexander Gustafsson</p><img src="images/swe.gif"></li>
+                    <li><img src="images/dh.png"><h2>4</h2><p>Dan Henderson</p><img src="images/usa.gif"></li>
+                    <li><img src="images/re.png"><h2>5</h2><p>Rashad Evans</p><img src="images/usa.gif"></li>
+                    <li><img src="images/pd.png"><h2>6</h2><p>Phil Davis</p><img src="images/usa.gif"></li>
+                    <li><img src="images/gt.png"><h2>7</h2><p>Glover Teixeira</p><img src="images/bra.gif"></li>
+                    <li><img src="images/arn.png"><h2>8</h2><p>Antonio Rogerio Nogueira</p><img src="images/bra.gif"></li>
+                    <li><img src="images/rb.png"><h2>9</h2><p>Ryan Bader</p><img src="images/usa.gif"></li>
+                    <li><img src="images/mr.png"><h2>10</h2><p>Mauricio Rua</p><img src="images/bra.gif"></li>
+                </ul>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Middleweight</h3>
+            	<ul data-role="listview">
+                	<li><img src="images/1.png"><h2>1</h2><p>Anderson Silva</p><img src="images/bra.gif"></li>
+                    <li><img src="images/vb.png"><h2>2</h2><p>Vitor Belfort</p><img src="images/bra.gif"></li>
+                    <li><img src="images/cw.png"><h2>3</h2><p>Chris Weidman</p><img src="images/usa.gif"></li>
+                    <li><img src="images/cs.png"><h2>4</h2><p>Chael Sonnen</p><img src="images/usa.gif"></li>
+                    <li><img src="images/mb.png"><h2>5</h2><p>Michael Bisping</p><img src="images/eng.gif"></li>
+                    <li><img src="images/lr.png"><h2>6</h2><p>Luke Rockhold</p><img src="images/usa.gif"></li>
+                    <li><img src="images/rs.png"><h2>7</h2><p>Ronaldo Souza</p><img src="images/bra.gif"></li>
+                    <li><img src="images/yo.png"><h2>8</h2><p>Yushin Okami</p><img src="images/jpn.gif"></li>
+                    <li><img src="images/cp.png"><h2>9</h2><p>Constantinos Philippou</p><img src="images/usa.gif"></li>
+                    <li><img src="images/mm.png"><h2>10</h2><p>Mark Munoz</p><img src="images/usa.gif"></li>
+                </ul>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Welterweight</h3>
+            	<ul data-role="listview">
+                	<li><img src="images/3.png"><h2>1</h2><p>Georges St-Pierre</p><img src="images/can.gif"></li>
+                    <li><img src="images/jh.png"><h2>2</h2><p>Johny Hendricks</p><img src="images/usa.gif"></li>
+                    <li><img src="images/cc.png"><h2>3</h2><p>Carlos Condit</p><img src="images/usa.gif"></li>
+                    <li><img src="images/je.png"><h2>4</h2><p>Jake Ellenberger</p><img src="images/usa.gif"></li>
+                    <li><img src="images/dm.png"><h2>5</h2><p>Demian Maia</p><img src="images/bra.gif"></li>
+                    <li><img src="images/rm.png"><h2>6</h2><p>Rory MacDonald</p><img src="images/can.gif"></li>
+                    <li><img src="images/nd.png"><h2>7</h2><p>Nick Diaz</p><img src="images/usa.gif"></li>
+                    <li><img src="images/mk.png"><h2>8</h2><p>Martin Kampmann</p><img src="images/den.gif"></li>
+                    <li><img src="images/jf.png"><h2>9</h2><p>Jon Fitch</p><img src="images/usa.gif"></li>
+                    <li><img src="images/ba.jpg"><h2>10</h2><p>Ben Askren</p><img src="images/usa.gif"></li>
+                </ul>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Lightweight</h3>
+            	<ul data-role="listview">
+                	<li><img src="images/5.png"><h2>1</h2><p>Benson Henderson</p><img src="images/usa.gif"></li>
+                    <li><img src="images/9.png"><h2>2</h2><p>Gilbert Melendez</p><img src="images/usa.gif"></li>
+                    <li><img src="images/ap.png"><h2>3</h2><p>Anthony Pettis</p><img src="images/usa.gif"></li>
+                    <li><img src="images/tg.png"><h2>4</h2><p>TJ Grant</p><img src="images/can.gif"></li>
+                    <li><img src="images/mc.jpg"><h2>5</h2><p>Mike Chandler</p><img src="images/usa.gif"></li>
+                    <li><img src="images/gm.png"><h2>6</h2><p>Gray Maynard</p><img src="images/usa.gif"></li>
+                    <li><img src="images/dc1.png"><h2>7</h2><p>Donald Cerrone</p><img src="images/usa.gif"></li>
+                    <li><img src="images/jt.png"><h2>8</h2><p>Josh Thomson</p><img src="images/usa.gif"></li>
+                    <li><img src="images/ea.png"><h2>9</h2><p>Eddie Alvavrez</p><img src="images/usa.gif"></li>
+                    <li><img src="images/kn.png"><h2>10</h2><p>Khabib Nurmagomedov</p><img src="images/usa.gif"></li>
+                </ul>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Featherweight</h3>
+            	<ul data-role="listview">
+                	<li><img src="images/4.png"><h2>1</h2><p>Jose Aldo</p><img src="images/bra.gif"></li>
+                    <li><img src="images/10.png"><h2>2</h2><p>Frankie Edgar</p><img src="images/usa.gif"></li>
+                    <li><img src="images/pc.png"><h2>3</h2><p>Pat Curran</p><img src="images/usa.gif"></li>
+                    <li><img src="images/cm.png"><h2>4</h2><p>Chad Mendes</p><img src="images/can.gif"></li>
+                    <li><img src="images/rl.png"><h2>5</h2><p>Ricardo Lamas</p><img src="images/usa.gif"></li>
+                    <li><img src="images/csj.png"><h2>6</h2><p>Chan Sung Jung</p><img src="images/kor.gif"></li>
+                    <li><img src="images/cs1.png"><h2>7</h2><p>Cub Swanson</p><img src="images/usa.gif"></li>
+                    <li><img src="images/ds.png"><h2>8</h2><p>Dennis Siver</p><img src="images/ger.gif"></li>
+                    <li><img src="images/dp.png"><h2>9</h2><p>Dustin Poirier</p><img src="images/usa.gif"></li>
+                    <li><img src="images/ek.png"><h2>10</h2><p>Erik Koch</p><img src="images/usa.gif"></li>
+                </ul>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Bantamweight</h3>
+            	<ul data-role="listview">
+                	<li><img src="images/8.png"><h2>1</h2><p>Renan Barao</p><img src="images/bra.gif"></li>
+                    <li><img src="images/uf.png"><h2>2</h2><p>Urijah Faber</p><img src="images/usa.gif"></li>
+                    <li><img src="images/mm1.png"><h2>3</h2><p>Michael McDonald</p><img src="images/usa.gif"></li>
+                    <li><img src="images/ew.png"><h2>4</h2><p>Eddie Wineland</p><img src="images/usa.gif"></li>
+                    <li><img src="images/bf.png"><h2>5</h2><p>Bibiano Fernandez</p><img src="images/bra.gif"></li>
+                    <li><img src="images/bp.png"><h2>6</h2><p>Brad Pickett</p><img src="images/eng.gif"></li>
+                    <li><img src="images/ed.png"><h2>7</h2><p>Eduardo Dantas</p><img src="images/bra.gif"></li>
+                    <li><img src="images/sj.png"><h2>8</h2><p>Scott Jorgensen</p><img src="images/usa.gif"></li>
+                    <li><img src="images/ra.png"><h2>9</h2><p>Raphael Assuncao</p><img src="images/usa.gif"></li>
+                </ul>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Flyweight</h3>
+            	<ul data-role="listview">
+                	<li><img src="images/6.png"><h2>1</h2><p>Demetrious Johnson</p><img src="images/usa.gif"></li>
+                    <li><img src="images/jb1.png"><h2>2</h2><p>Joseph Benavidez</p><img src="images/usa.gif"></li>
+                    <li><img src="images/jd.png"><h2>3</h2><p>John Dodson</p><img src="images/usa.gif"></li>
+                    <li><img src="images/im.png"><h2>4</h2><p>Ian McCall</p><img src="images/usa.gif"></li>
+                    <li><img src="images/jm.png"><h2>5</h2><p>John Moraga</p><img src="images/usa.gif"></li>
+                    <li><img src="images/dm1.jpg"><h2>6</h2><p>Darrell Montague</p><img src="images/usa.gif"></li>
+                    <li><img src="images/lg.png"><h2>7</h2><p>Louis Gaudinot</p><img src="images/usa.gif"></li>
+                    <li><img src="images/cc1.png"><h2>8</h2><p>Chris Cariaso</p><img src="images/usa.gif"></li>
+                    <li><img src="images/jl.png"><h2>9</h2><p>John Lineker</p><img src="images/bra.gif"></li>
+                </ul>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a href="#home" data-role="button" data-icon="home">MMA Home</a></li>
+                    <li><a href="#champions" data-role="button" data-icon="star">Champions</a></li>
+                    <li><a href="#hall_of_fame" data-role="button" data-icon="check">Hall Of Fame</a></li>
+                    <li><a href="#upcoming_Events" data-role="button" data-icon="bars">Upcoming Events</a></li>
+                </ul>
+            </div>
+        </div>
+     </div>
+    <!--end of rankings-->
+    
+    <!--Champions-->
+    <div id="champions" data-role="page">
+    	<div data-role="header">
+        	<h1>Champions</h1>
+            <a href="#home" data-icon="home">Home</a><!--adds an icon in the header -->
+        </div>
+            <section class="ui-grid-a">
+                <div class="ui-block-a">
+                    <h4>Heavyweight</h4>
+                    <p><a href="#">Cain Velazquise</a></p>
+                    <img src="images/CainVelasquez_Headshot.png" height="200" width="180">
+                    <h4>Middleweight</h4>
+                    <p><a href="#">Anderson Silva</a></p>
+                    <img src="images/anderson_head_153.png" height="200" width="180">
+                    <h4>Lightweigth</h4>
+                    <p><a>Benson Henderson</a></p>
+                    <img src="images/BensonHenderson_Headshot.png" height="200" width="180">
+                    <h4>Bantamweigth</h4>
+                    <p><a>Dominick Cruz</a></p>
+                    <img src="images/DominickCruz_Headshot.png" height="200" width="180">
+                    
 
-	<!-- Page: Videos -->
-	<div id="videos"
-		data-role="page"
-		data-title="View Source: Videos">
-		<div data-role="header"
-			data-position="fixed"
-			data-id="vs_header">
-			<h1>Videos</h1>
-			<a href="#home" data-icon="home" data-iconpos="notext">Home</a>
-		</div><!-- header -->
-		<p>Videos Page.</p>
-		<div data-role="footer"
-			data-position="fixed"
-			data-id="vs_footer">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#home" 
-					data-role="button"
-					data-icon="home"
-					>Home</a></li>
-					<li><a href="#blog" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Blog</a></li>
-					<li><a href="#" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Videos</a></li>
-					<li><a href="#photos" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Photos</a></li>
-					<li><a href="#tweets" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Tweets</a></li>
-				</ul>
-			</div><!-- navbar -->
-		</div><!-- footer -->
-	</div><!-- page -->
-	
-	<!-- Page: Photos -->
-	<div id="photos"
-		data-role="page"
-		data-title="View Source: Photos">
-		<div data-role="header"
-			data-position="fixed"
-			data-id="vs_header">
-			<h1>Photos</h1>
-			<a href="#home" data-icon="home" data-iconpos="notext">Home</a>
-		</div><!-- header -->
-		<p>Photos from Flickr</p>
-		<div data-role="footer"
-			data-position="fixed"
-			data-id="vs_footer">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#home" 
-					data-role="button"
-					data-icon="home"
-					>Home</a></li>
-					<li><a href="#blog" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Blog</a></li>
-					<li><a href="#videos" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Videos</a></li>
-					<li><a href="#" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Photos</a></li>
-					<li><a href="#tweets" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Tweets</a></li>
-				</ul>
-			</div><!-- navbar -->
-		</div><!-- footer -->
-	</div><!-- page -->
-	
-	<!-- Page: Tweets -->
-	<div id="tweets"
-		data-role="page"
-		data-title="View Source: Tweets">
-		<div data-role="header"
-			data-position="fixed"
-			data-id="vs_header">
-			<h1>Tweets</h1>
-			<a href="#home" data-icon="home" data-iconpos="notext">Home</a>
-		</div><!-- header -->
-		<p>Tweets page.</p>
-		<div data-role="footer"
-			data-position="fixed"
-			data-id="vs_footer">
-			<div data-role="navbar">
-				<ul>
-					<li><a href="#home" 
-					data-role="button"
-					data-icon="home"
-					>Home</a></li>
-					<li><a href="#blog" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Rankings</a></li>
-					<li><a href="#videos" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Videos</a></li>
-					<li><a href="#photos" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Photos</a></li>
-					<li><a href="#" 
-					data-role="button"
-					data-icon="arrow-r"
-					>Tweets</a></li>
-				</ul>
-			</div><!-- navbar -->
-		</div><!-- footer -->
-	</div><!-- page -->
+                </div>
+                <div class="ui-block-b">
+                	<h4>Light-Heavyweight</h4>
+                    <p><a href="#">Jon Jones</a></p>
+                    <img src="images/JonJones_Headshot.png" height="200" width="180">
+                    <h4>Welter-weight</h4>
+                    <p><a href="#">George St. Piere</a></p>
+                    <img src="images/GeorgesStPierre_Headshot2012.png" height="200" width="180">
+                    <h4>Featherweigth</h4>
+                    <p><a>Jose Aldo</a></p>
+                    <img src="images/JoseAldo_Headshot.png" height="200" width="180">
+                    <h4>Flyweigth</h4>
+                    <p><a>Demetrious Johnson</a></p>
+                    <img src="images/DemetriousJohnson_Headshot.png" height="200" width="180">
+                </div>
+            </section>
 
+        <div data-role="footer" data-position="fixed">
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a href="#home" data-role="button" data-icon="home">MMA Home</a></li>
+                    <li><a href="#rankings" data-role="button" data-icon="grid">Rankings</a></li>
+                    <li><a href="#hall_of_fame" data-role="button" data-icon="check">Hall Of Fame</a></li>
+                    <li><a href="#upcoming_Events" data-role="button" data-icon="bars">Upcoming Events</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end of champions-->
+    
+    <!--Hall Of Fame-->
+    <div id="hall_of_fame" data-role="page">
+    	<div data-role="header">
+        	<h1>Hall Of Fame</h1>
+            <a href="#home" data-icon="home">Home</a><!--adds an icon in the header -->
+        </div>
+        <div data-role="collapsible" data-collapsed="false">
+        	<h3>Mark Coleman</h3>
+            <img src="images/Mark_Coleman.png" height="200" width="180">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Randy Couture</h3>
+            <img src="images/randy_couture.png" height="200" width="180">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Tito Ortiz</h3>
+            <img src="images/tito_ortiz.png" height="200" width="180">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Royce Gracie</h3>
+            <img src="images/Royce_Gracie.png" height="200" width="180">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3 onclick="$.mobile.silentScroll(200)">Matt Hughes</h3>
+            <img src="images/matt_hughes.png" height="200" width="180">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Charles Lewis</h3>
+            <img src="images/charles_lewis.jpg" height="200" width="180">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Chuck Liddell</h3>
+            <img src="images/Chuck_Lidell.png" height="200" width="180">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Dan Savern</h3>
+            <img src="images/dan_savern1.png" height="200" width="180">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+        </div>
+        
+        <div data-role="collapsible">
+        	<h3>Ken Shamrock</h3>
+            <img src="images/ken-shamrock1.png" height="200" width="180">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+        </div>
+        <div data-role="footer" data-position="fixed">
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a href="#home" data-role="button" data-icon="home">MMA Home</a></li>
+                    <li><a href="#rankings" data-role="button" data-icon="grid">Rankings</a></li>
+                    <li><a href="#champions" data-role="button" data-icon="star">Champions</a></li>
+                    <li><a href="#upcoming_Events" data-role="button" data-icon="bars">Upcoming Events</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end of hall of fame-->
+    
+    <!--upcoming events-->
+    <div id="upcoming_Events" data-role="page">
+    	<div data-role="header">
+        	<h1>Upcoming Events</h1>
+            <a href="#home" data-icon="home">Home</a><!--adds an icon in the header -->
+        </div>
+        <p>Upcoming Events</p>
+        <table width="100%" border="1">
+  <tr>
+    <th scope="col"><h2>1</h2></th>
+    <th scope="col"><img src="images/1.png"></th>
+    <th scope="col"><p>Anderson Silva<br>
+Middleweight Champ</p></th>
+    <th scope="col"><img src="images/bra.gif"></th>
+  </tr>
+  <tr>
+    <td><h2>2</h2></td>
+    <td><img src="images/2.png"></td>
+    <td><p>Jon Jones</p></td>
+    <td><img src="images/usa.gif"></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+  </tr>
+</table>
 
+        <div data-role="footer" data-position="fixed">
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a href="#home" data-role="button" data-icon="home">MMA Home</a></li>
+                    <li><a href="#rankings" data-role="button" data-icon="grid">Rankings</a></li>
+                    <li><a href="#champions" data-role="button" data-icon="star">Champions</a></li>
+                    <li><a href="#hall_of_fame" data-role="button" data-icon="bars">Hall Of Fame</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end of upcoming events-->
 </body>
 </html>
