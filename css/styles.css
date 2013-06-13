@@ -68,3 +68,14 @@ h4{
 	background-repeat:no-repeat;
 }
 /*end of upcoming events*/
+
+
+p, h1, h2, h3, h4, h5, h6, a{
+	font-family:"Comic Sans MS", cursive;
+}
+	
+#home h4{
+	border:2px solid black;
+	background:white;
+	text-align:center;
+}
