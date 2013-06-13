@@ -3,12 +3,17 @@
 /* CSS Document */
 
 /*home*/
+h4{
+	margin:0px;
+	padding:0px;
+}
 #home{
-	background:url(../images/fence.png);
+	background:url(../images/background.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
 }
 #home_header{
-	background-image:url(../images/logo_mma_main_small_50x50.png);
-	background-repeat:no-repeat;
+	background-color:black;
 }
 #home_header h1{
 	font-family:"Comic Sans MS", cursive;
@@ -20,13 +25,17 @@
 
 /*rankings*/
 #rankings{
-	background:url(../images/fence.png);
+	background:url(../images/background.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
 }
 /*end of rankings*/
 
 /*champions*/
 #champions{
-	background:url(../images/fence.png);
+	background:url(../images/background.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
 }
 #champions a{
 	text-decoration:none;
@@ -41,7 +50,9 @@
 
 /*hall of fame*/
 #hall_of_fame{
-	background:url(../images/fence.png);
+	background:url(../images/background.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
 }
 #hall_of_fame p{
 	font-family:Verdana, Geneva, sans-serif;
@@ -52,6 +63,8 @@
 
 /*upcoming events*/
 #upcoming_Events{
-	background-color:#CCFF99;
+	background:url(../images/background.png);
+	background-size:100% 100%;
+	background-repeat:no-repeat;
 }
 /*end of upcoming events*/

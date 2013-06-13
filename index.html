@@ -9,8 +9,43 @@
 <link rel="stylesheet" href="css/styles.css" />
 <script type="text/javascript" src="JavaScript/jquery-1.9.1.min.js"></script>
 <script type="text/javascript" src="JavaScript/jquery.mobile-1.3.0.min.js"></script>
-<script type="text/javascript" src="JavaScript/mma_app_main.js"></script>
+<script type="text/javascript" src="JavaScript/cordova.ios.js"></script>
+<script type="text/javascript">
+	// Wait for Cordova to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
 
+    // Cordova is ready
+    //
+    function onDeviceReady() {
+        navigator.geolocation.getCurrentPosition(onSuccess, onError);
+    }
+
+    // onSuccess Geolocation
+    //
+    function onSuccess(position) {
+        var element = document.getElementById('geolocation');
+        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+                            'Longitude: '          + position.coords.longitude             + '<br />' +
+                            'Altitude: '           + position.coords.altitude              + '<br />' +
+                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
+                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+                            'Heading: '            + position.coords.heading               + '<br />' +
+                            'Speed: '              + position.coords.speed                 + '<br />' +
+                            'Timestamp: '          +                                   position.timestamp          + '<br />';
+    }
+
+    // onError Callback receives a PositionError object
+    //
+    function onError(error) {
+        alert('code: '    + error.code    + '\n' +
+                'message: ' + error.message + '\n');
+    }
+
+</script>
+<!--geolocation files-->
+<plugin name="Geolocation" value="CDVLocation" />
+<!--end of geolocation-->
 </head>
 
 <body>
@@ -21,6 +56,8 @@
             <h2>Mixed Martial Arts</h2>
         </div><!--end of header-->
         <img id="banner" src="images/banner1.png">
+            <a href="#find_gym" data-role="button">Find A Gym</a>
+            <a href="#info_page" data-role="button">Info</a>
         <div data-role="footer" data-position="fixed">
         	<div data-role="navbar">
             	<ul>
@@ -34,7 +71,51 @@
 
     </div>
     <!--end of home page-->
+    
+    <!--Find Gym Page-->
+    <div id="find_gym" data-role="page">
+    	<div data-role="header">
+        	<h1>Gym by Location</h1>
+            <a href="#home" data-icon="home">Home</a><!--adds a "home" icon in the header -->
 
+        </div>
+        <div>
+            <p id="geolocation">Finding geolocation...</p>
+		</div>    
+    
+    	<div data-role="footer" data-position="fixed">
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a href="#rankings" data-role="button" data-icon="grid">Rankings</a></li>
+                    <li><a href="#champions" data-role="button" data-icon="star">Champions</a></li>
+                    <li><a href="#hall_of_fame" data-role="button" data-icon="check">Hall Of Fame</a></li>
+                    <li><a href="#upcoming_Events" data-role="button" data-icon="bars">Upcoming Events</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end of find gym-->
+    
+    <!--Info Page-->
+    <div id="info_page" data-role="page">
+    	<div data-role="header">
+        	<h1>About The App</h1>
+            <a href="#home" data-icon="home">Home</a><!--adds a "home" icon in the header -->
+        </div>
+   
+    	<div data-role="footer" data-position="fixed">
+        	<div data-role="navbar">
+            	<ul>
+                	<li><a href="#rankings" data-role="button" data-icon="grid">Rankings</a></li>
+                    <li><a href="#champions" data-role="button" data-icon="star">Champions</a></li>
+                    <li><a href="#hall_of_fame" data-role="button" data-icon="check">Hall Of Fame</a></li>
+                    <li><a href="#upcoming_Events" data-role="button" data-icon="bars">Upcoming Events</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--end of Info-->
+    
 	<!--rankings-->
     <div id="rankings" data-role="page">
     	<div data-role="header" data-id="rank_header">
@@ -256,55 +337,63 @@
         <div data-role="collapsible" data-collapsed="false">
         	<h3>Mark Coleman</h3>
             <img src="images/Mark_Coleman.png" height="200" width="180">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+            <p>Coleman, the first UFC Heavyweight Champion, is the “Godfather of Ground & Pound".<strong><br>
+FIGHTING RECORD 16-10-0(W-L-D)</strong></p>
         </div>
         
         <div data-role="collapsible">
         	<h3>Randy Couture</h3>
             <img src="images/randy_couture.png" height="200" width="180">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+            <p>Randy Couture is one of only two UFC Champions to hold belts in two weight classes.<strong><br>
+FIGHTING RECORD 18-10-0(W-L-D)</strong></p>
         </div>
         
         <div data-role="collapsible">
         	<h3>Tito Ortiz</h3>
             <img src="images/tito_ortiz.png" height="200" width="180">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+            <p>Tito Ortiz holds 6 UFC light-heavyweight title records.<strong><br>
+FIGHTING RECORD 17-11-1(W-L-D)</strong></p>
         </div>
         
         <div data-role="collapsible">
         	<h3>Royce Gracie</h3>
             <img src="images/Royce_Gracie.png" height="200" width="180">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+            <p>Royce Gracie put Brazilian Jiu-Jitsu on the map in the United States with his amazing victory at UFC 1.<strong><br>
+RECORD 13-2-2(W-L-D)</strong></p>
         </div>
         
         <div data-role="collapsible">
         	<h3 onclick="$.mobile.silentScroll(200)">Matt Hughes</h3>
             <img src="images/matt_hughes.png" height="200" width="180">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+            <p>Matt Hughes is one of the most dominant Welterweights in the UFC<strong><br>
+FIGHTING RECORD 45-7-0 (W-L-D)</strong></p>
         </div>
         
         <div data-role="collapsible">
         	<h3>Charles Lewis</h3>
             <img src="images/charles_lewis.jpg" height="200" width="180">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+            <p>As one of the three founders of Tapout, Mask(Charles Lewis) was known as one of the biggest supporters and fans of MMA.</p>
         </div>
         
         <div data-role="collapsible">
         	<h3>Chuck Liddell</h3>
             <img src="images/Chuck_Lidell.png" height="200" width="180">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+            <p>Chuck Liddell has one of the longest running title reigns in UFC history.<strong><br>
+FIGHTING RECORD 21-8-0 (W-L-D)</strong></p>
         </div>
         
         <div data-role="collapsible">
         	<h3>Dan Savern</h3>
             <img src="images/dan_savern1.png" height="200" width="180">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+            <p>Dan Severn was the first world-class wrestler to dominate the UFC.<strong><br>
+FIGHTING RECORD 70-13-7 (W-L-D)</strong></p>
         </div>
         
         <div data-role="collapsible">
         	<h3>Ken Shamrock</h3>
             <img src="images/ken-shamrock1.png" height="200" width="180">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus accumsan iaculis tempor. Maecenas condimentum est eget lectus aliquam lacinia. Maecenas metus enim, hendrerit ut varius in, convallis et quam. Curabitur at malesuada leo. Nullam pellentesque mollis velit in semper.</p>
+            <p>Ken Shamrock is known as one of the most successful early UFC fighters.<strong><br>
+FIGHTING RECORD 26-11-2(W-L-D)</strong></p>
         </div>
         <div data-role="footer" data-position="fixed">
         	<div data-role="navbar">
@@ -328,23 +417,64 @@
         <p>Upcoming Events</p>
         <table width="100%" border="1">
   <tr>
-    <th scope="col"><h2>1</h2></th>
-    <th scope="col"><img src="images/1.png"></th>
-    <th scope="col"><p>Anderson Silva<br>
-Middleweight Champ</p></th>
-    <th scope="col"><img src="images/bra.gif"></th>
+    <th scope="col"><h2>WSOF</h2></th>
+    <th scope="col"><p>6/14/2013</p></th>
+    <th scope="col"><p>World Series Of fighting</p></th>
+    <th scope="col"><p>Las Vegas, Nevada</p></th>
   </tr>
   <tr>
-    <td><h2>2</h2></td>
-    <td><img src="images/2.png"></td>
-    <td><p>Jon Jones</p></td>
-    <td><img src="images/usa.gif"></td>
+    <td><h2>UFC 161</h2></td>
+    <td><p>6/14/2013</p></td>
+    <td><p>Ultimate Fighting Championship</p></td>
+    <td><p>Winnipeg, Manitoba</p></td>
   </tr>
   <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
+    <td><h2>BLT</h2></td>
+    <td><p>6/19/2013</p></td>
+    <td><p>Bellator XCVI</p></td>
+    <td><p>Thackerville, Oklahoma</p></td>
+  </tr>
+    <tr>
+    <td><h2>UFC 162</h2></td>
+    <td><p>7/6/2013</p></td>
+    <td><p>Ultimate Fighting Championship</p></td>
+    <td><p>Las Vegas, Nevada</p></td>
+  </tr>
+  <tr>
+    <td><h2>CW-56</h2></td>
+    <td><p>7/16/2013</p></td>
+    <td><p>Cage Warriors 56</p></td>
+    <td><p>London, England</p></td>
+  </tr>
+    <tr>
+    <td><h2>IFC</h2></td>
+    <td><p>7/13/2013</p></td>
+    <td><p>Invicta Fighting Championship 6</p></td>
+    <td><p>Kansas City, Missouri</p></td>
+  </tr>
+  <tr>
+    <td><h2>CW-57</h2></td>
+    <td><p>7/12/2013</p></td>
+    <td><p>Cage Warriors 57</p></td>
+    <td><p>Liverpool, England</p></td>
+  </tr>
+    <tr>
+    <td><h2>UFC</h2></td>
+    <td><p>7/27/2013</p></td>
+    <td><p>UFC on Fox</p></td>
+    <td><p>Las Vegas, Nevada</p></td>
+  </tr>
+  <tr>
+    <td><h2>BLT</h2></td>
+    <td><p>7/31/2013</p></td>
+    <td><p>Bellator XCVII</p></td>
+    <td><p>Albuquerque, New Mexico</p></td>
+  </tr>
+    <tr>
+    <td><h2>UFC</h2></td>
+    <td><p>8/3/2013</p></td>
+    <td><p>UFC 163</p></td>
+    <td><p>Rio De Janeiro, Brazil</p></td>
   </tr>
 </table>
 
